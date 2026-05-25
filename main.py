@@ -35,7 +35,7 @@ tarefa = {
     "data_conclusao": "25/05/2026",
     "concluida": False  # Toda tarefa nova nasce como False (pendente)
 }'''
-lista_tarefas = []
+lista_tarefas = carregar_tarefas()
 
 #Primeiro adicionar tarefa
 def adicionar_tarefa():
@@ -63,7 +63,7 @@ def listar_tarefas():
         print(f'id: {lista["id"]} | status: {'Concluida' if lista.get("concluida") else "Pendente"}')
         print(f'Tarefa: {lista["tarefa"]}')
         print(f'Descrição: {lista["descrição"]}')
-        print(f'Data: {lista['data_conclusão']}')
+        print(f'Data: {lista["data_conclusão"]}')
         print("-" * 30)
 
 def marcar_concluida():
@@ -88,7 +88,7 @@ def remover_tarefa():
     remove = input('Informe qual tarefa deseja remover: ').lower()
     for lista in lista_tarefas:
         #se lista encontrada a remove
-        if lista['tarefa'] == remove:
+        if lista['tarefa'].lower() == remove:
             lista_tarefas.remove(lista)
             print('Removida com sucesso!')
 
@@ -99,12 +99,12 @@ def pesquisar_tarefa():
     tarefa_encontrada = False #condição se deu certo ou não
     for lista in lista_tarefas:
         #mostra ao usuario apenas a lista desejada
-        if (title in lista['tarefa']) or (title in lista['descrição']):
+        if (title in lista['tarefa'].lower()) or (title in lista['descrição'].lower()):
            
             print(f'id: {lista["id"]} | status: {'Concluida' if lista.get("concluida") else "Pendente"}')
             print(f'Tarefa: {lista["tarefa"]}')
             print(f'Descrição: {lista["descrição"]}')
-            print(f'Data: {lista['data_conclusão']}')
+            print(f'Data: {lista["data_conclusão"]}')
             print("-" * 30)
 
             tarefa_encontrada = True
