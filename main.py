@@ -56,6 +56,10 @@ def adicionar_tarefa():
     #adicionando o dicionario na lista
     lista_tarefas.append(dicionario_tarefa)
 
+    temp_exato = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    with open('logs.txt', 'a', encoding= 'utf-8') as arquivo:
+        arquivo.write(f'[{temp_exato}] TAREFA ADICIONADA: A tarefa {dicionario_tarefa["tarefa"]} recebendo o ID {dicionario_tarefa["id"]}\n')
+
 def listar_tarefas():
     print('\nLista de tarefas:')
     for lista in lista_tarefas:
