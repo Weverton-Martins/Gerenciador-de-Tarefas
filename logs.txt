@@ -1,2 +1,3 @@
 [26/05/2026 22:22:14] TAREFA ADICIONADA: A tarefa estudar recebendo o ID 6
 [26/05/2026 22:22:31] TAREFA ADICIONADA: A tarefa treinar recebendo o ID 7
+[26/05/2026 22:51:35] TAREFA ADICIONADA: A tarefa estudar recebendo o ID 8
